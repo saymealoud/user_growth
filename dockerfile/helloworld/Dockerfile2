@@ -1,0 +1,8 @@
+# https://hub.docker.com/_/ubuntu
+FROM ubuntu:20.04
+RUN mkdir -p /data/code
+COPY ./greeter_* /data/code/
+WORKDIR /data/code/
+EXPOSE 50051
+
+CMD cd /data/code/ && ./greeter_server
